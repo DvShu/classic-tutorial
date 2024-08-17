@@ -1,0 +1,16 @@
+{
+  "name": "classic-tutorial",
+  "description": "各种demo演示列表",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "rspress dev",
+    "build": "rspress build",
+    "preview": "rspress preview"
+  },
+  "dependencies": {
+    "rspress": "^1.28.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.4.0"
+  }
+}
