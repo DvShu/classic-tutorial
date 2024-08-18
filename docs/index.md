@@ -8,12 +8,12 @@ hero:
   actions:
     - theme: brand
       text: 实例列表
-      link: /guide/
+      link: /list/
     - theme: alt
       text: GitHub
-      link: https://github.com/web-infra-dev/rspress
+      link: https://github.com/DvShu/classic-tutorial
   image:
-    src: /rspress-icon.png
+    src: /logo.svg
     alt: 经典教程 Logo
 features:
   - title: 实例集合

@@ -2,6 +2,16 @@
   "name": "classic-tutorial",
   "description": "各种demo演示列表",
   "version": "0.0.1",
+  "license": "MIT",
+  "homepage": "https://x.com",
+  "repository": "DvShu/classic-tutorial",
+  "bugs": "https://github.com/DvShu/classic-tutorial/issues",
+  "keywords": ["demo", "tutorial"],
+  "author": "DvShu <joel.shu@qq.com>",
+  "contributors": ["DvShu"],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "rspress dev",
     "build": "rspress build",
@@ -12,5 +22,5 @@
   },
   "devDependencies": {
     "@types/node": "^22.4.0"
-  }
+  },
 }

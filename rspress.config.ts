@@ -5,18 +5,15 @@ export default defineConfig({
   root: path.join(__dirname, "docs"),
   title: "经典教程",
   description: "各种实例演示教程",
-  icon: "/rspress-icon.png",
-  logo: {
-    light: "/rspress-light-logo.png",
-    dark: "/rspress-dark-logo.png",
-  },
+  icon: "/logo.svg",
+  logo: "/logo.svg",
   logoText: "经典教程",
   themeConfig: {
     socialLinks: [
       {
         icon: "github",
         mode: "link",
-        content: "https://github.com/web-infra-dev/rspress",
+        content: "https://github.com/DvShu/classic-tutorial",
       },
     ],
   },

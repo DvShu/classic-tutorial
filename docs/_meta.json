@@ -1,16 +1,7 @@
 [
   {
-    "text": "Guide",
-    "link": "/guide/",
-    "activeMatch": "/guide/"
-  },
-  {
-    "text": "Hello World",
-    "link": "/hello/",
-    "activeMatch": "/hello/"
-  },
-  {
-    "text": "API",
-    "link": "https://rspress.dev/api/index.html"
+    "text": "实例列表",
+    "link": "/tutorial_list/",
+    "activeMatch": "/tutorial_list/"
   }
 ]
