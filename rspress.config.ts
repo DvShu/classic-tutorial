@@ -2,6 +2,7 @@ import * as path from "path";
 import { defineConfig } from "rspress/config";
 
 export default defineConfig({
+  base: "/classic-tutorial/",
   root: path.join(__dirname, "docs"),
   title: "经典教程",
   description: "各种实例演示教程",
