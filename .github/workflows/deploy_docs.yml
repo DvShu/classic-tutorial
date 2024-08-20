@@ -25,7 +25,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v3 # pnpm is optional but recommended, you can also use npm / yarn
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3 # pnpm is optional but recommended, you can also use npm / yarn
         with:
           version: latest
 
