@@ -1,7 +1,8 @@
+name: deploy-docs
+
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
   # 允许你从 Actions 选项卡手动运行此工作流程
   workflow_dispatch:
@@ -13,9 +14,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
-
-name: deploy-docs
+  contents: read
 
 jobs:
   deploy:
@@ -26,12 +25,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Pnpm
-        id: setup-pnpm
-        uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v3 # pnpm is optional but recommended, you can also use npm / yarn
         with:
           version: latest
-
+          
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
