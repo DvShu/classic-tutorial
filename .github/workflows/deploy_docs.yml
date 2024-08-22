@@ -38,7 +38,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      
+
       - name: Get pnpm store directory
         shell: bash
         run: |
@@ -62,4 +62,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./doc_build
+          publish_dir: ./docs/.vitepress/dist
