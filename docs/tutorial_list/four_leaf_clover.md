@@ -197,5 +197,5 @@ import "../../src/styles/four_leaf_clover.css";
 
 ## 说明
 
-1. 使用 `grid` 布局将四个叶子排列成四叶草的形状。
+1. 四叶其实就是一两行两列的 `grid` 布局
 2. 使用 `border-radius` 设置 4 个角不同的角度。
