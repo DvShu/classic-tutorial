@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkclassic_tutorial=self.webpackChunkclassic_tutorial||[]).push([["212"],{7014:function(n,c,u){u.d(c,{Z:function(){return f}});let f={fourLeafClover:"fourLeafClover-r2hOLT",leaf:"leaf-q3IAGR",icon:"icon-bdb9mD"}},4576:function(){},5128:function(){},1505:function(){},8879:function(){}}]);
