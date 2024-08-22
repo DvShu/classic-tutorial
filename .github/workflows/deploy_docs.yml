@@ -2,7 +2,7 @@ name: deploy-docs
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
   # 允许你从 Actions 选项卡手动运行此工作流程
   workflow_dispatch:
@@ -56,7 +56,7 @@ jobs:
         run: pnpm install
 
       - name: Build Site
-        run: pnpm build
+        run: pnpm docs:build
 
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v4
