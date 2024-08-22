@@ -3,7 +3,7 @@
 四叶草扇形布局动画特效
 
 <script>
-import "../../src/styles/four_leaf_clover.css";
+import "../styles/four_leaf_clover.css";
 </script>
 
 ## 效果
