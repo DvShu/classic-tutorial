@@ -3,7 +3,7 @@
   "description": "各种demo演示列表",
   "version": "0.0.1",
   "license": "MIT",
-  "homepage": "https://x.com",
+  "homepage": "https://dvshu.github.io/classic-tutorial/",
   "repository": "DvShu/classic-tutorial",
   "bugs": "https://github.com/DvShu/classic-tutorial/issues",
   "keywords": [
@@ -25,5 +25,6 @@
   "devDependencies": {
     "@types/node": "^22.4.2",
     "vitepress": "^1.3.3"
-  }
+  },
+  "packageManager": "pnpm@9.7.1"
 }

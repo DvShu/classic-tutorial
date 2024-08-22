@@ -1,4 +1,4 @@
-.fourLeafClover {
+.four-leaf-clover {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(2, 90px);
