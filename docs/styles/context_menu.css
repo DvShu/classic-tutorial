@@ -1,0 +1,41 @@
+.vp-doc .file-table {
+  width: 100%;
+  display: table;
+}
+.vp-doc .file-table tr {
+  border: none;
+}
+.vp-doc .file-table tr:nth-child(2n) {
+  background-color: #ffffff;
+}
+.vp-doc .file-table tr:hover {
+  background-color: #bae0ff;
+}
+
+.vp-doc .file-table th {
+  background-color: #ffffff;
+  border: none;
+  border-right: 1px solid #dedede;
+  cursor: default;
+}
+
+.vp-doc .file-table td {
+  border: none;
+  cursor: default;
+}
+
+.file-type-icon {
+  font-size: 18px;
+  margin-right: 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.file-icon1 {
+  color: #fa8c16;
+}
+.file-icon0 {
+  color: #1677ff;
+}
+.file-name {
+  vertical-align: middle;
+}
