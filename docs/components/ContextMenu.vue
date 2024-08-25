@@ -65,30 +65,6 @@ const showMenu = ref(false);
 const menuStyle = ref({});
 const $menu = ref<HTMLUListElement>();
 
-/** 获取某个节点距离容器顶部和左边的距离 */
-function getDistanceToContainer(el: HTMLElement) {
-  let offsetLeft = 0;
-  let offsetTop = 0;
-  let top = 0;
-  let bottom = 0;
-  let left = 0;
-  let right = 0;
-  let scroller: HTMLElement = el;
-  while (el) {
-    scroller = el;
-    const rect = el.getBoundingClientRect();
-    offsetTop += el.offsetTop;
-    offsetLeft += el.offsetLeft;
-    top = rect.top;
-    bottom = rect.bottom;
-    left = rect.left;
-    right = rect.right;
-    el = el.offsetParent as HTMLElement;
-  }
-
-  return { offsetLeft, offsetTop, top, bottom, left, right, scroller };
-}
-
 function handleContextMenu(e: MouseEvent) {
   let stop = false;
   let $target = e.target as HTMLElement;
@@ -112,39 +88,30 @@ function handleContextMenu(e: MouseEvent) {
     nextTick().then(() => {
       if ($menu.value != null) {
         // 获取滚动容器
-        const { scroller: container, top } = getDistanceToContainer(
-          $menu.value
-        );
+        const container = document.documentElement;
         // 获取鼠标位置
         const containerRect = container.getBoundingClientRect();
         // 滚动条水平方向滚动距离
         const scrollLeft = container.scrollLeft;
         // 滚动条垂直方向滚动距离
-        const scrollTop = Math.abs(top);
+        const scrollTop = container.scrollTop;
         // 菜单的最终距离为鼠标位置 + 滚动距离
         let menuTop = e.clientY + scrollTop;
         let menuLeft = e.clientX + scrollLeft;
         const menuRect = $menu.value.getBoundingClientRect();
         // 如果菜单的右边界超出了容器的右边界，则将菜单的右边界限制在容器的右边界
-        const maxWidth = Math.floor(containerRect.width - menuRect.width);
+        const maxWidth = Math.floor(
+          scrollLeft + window.innerWidth - 15 - menuRect.width
+        );
         if (menuLeft > maxWidth) {
-          menuLeft = maxWidth;
+          menuLeft = menuLeft - menuRect.width;
         }
         // 如果菜单的底部超出了容器的底部，则将菜单的底部限制在容器的底部
-        const maxHeight = Math.floor(containerRect.height - menuRect.height);
-        console.log(scrollTop);
+        const maxHeight = Math.floor(
+          scrollTop + window.innerHeight - 15 - menuRect.height
+        );
         if (menuTop > maxHeight) {
-          menuTop = maxHeight;
-        }
-        // 如果菜单的左边界超出了容器的左边界，则将菜单的左边界限制在容器的左边界
-        // 解决滚动内容后右键菜单显示在底部问题
-        if (e.clientY + menuRect.height < containerRect.height) {
-          menuTop = e.clientY;
-        } else {
-          console.log("over");
-        }
-        if (menuTop < maxHeight) {
-          menuTop = e.clientY;
+          menuTop = menuTop - menuRect.height;
         }
         menuStyle.value = {
           top: `${menuTop}px`,
@@ -152,17 +119,21 @@ function handleContextMenu(e: MouseEvent) {
         };
       }
     });
-  } else {
-    console.log(contextMenu);
   }
+}
+
+function handleClickoutside(e: Event) {
+  showMenu.value = false;
 }
 
 onMounted(() => {
   document.addEventListener("contextmenu", handleContextMenu);
+  document.addEventListener("click", handleClickoutside);
 });
 
 onUnmounted(() => {
   document.removeEventListener("contextmenu", handleContextMenu);
+  document.removeEventListener("click", handleClickoutside);
 });
 </script>
 
