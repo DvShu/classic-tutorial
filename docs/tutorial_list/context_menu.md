@@ -133,7 +133,6 @@
 ::: code-group
 
 ```js [js]
-<script setup lang="ts">
 // 获取滚动容器
 const container = document.documentElement;
 // 获取鼠标位置
@@ -159,7 +158,6 @@ menuStyle.value = {
   top: `${menuTop}px`,
   left: `${menuLeft}px`,
 };
-
 
 // 事件处理
 onMounted(() => {
