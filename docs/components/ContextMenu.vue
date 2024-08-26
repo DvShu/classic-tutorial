@@ -89,8 +89,6 @@ function handleContextMenu(e: MouseEvent) {
       if ($menu.value != null) {
         // 获取滚动容器
         const container = document.documentElement;
-        // 获取鼠标位置
-        const containerRect = container.getBoundingClientRect();
         // 滚动条水平方向滚动距离
         const scrollLeft = container.scrollLeft;
         // 滚动条垂直方向滚动距离
@@ -123,17 +121,24 @@ function handleContextMenu(e: MouseEvent) {
 }
 
 function handleClickoutside(e: Event) {
-  showMenu.value = false;
+  const $target = e.target as HTMLElement;
+  let isHide = true;
+  if ($menu.value != null) {
+    if ($menu.value.contains($target) || $menu.value === $target) {
+      isHide = false;
+    }
+  }
+  showMenu.value = !isHide;
 }
 
 onMounted(() => {
   document.addEventListener("contextmenu", handleContextMenu);
-  document.addEventListener("click", handleClickoutside);
+  document.addEventListener("click", handleClickoutside, { capture: true });
 });
 
 onUnmounted(() => {
   document.removeEventListener("contextmenu", handleContextMenu);
-  document.removeEventListener("click", handleClickoutside);
+  document.removeEventListener("click", handleClickoutside, { capture: true });
 });
 </script>
 
@@ -167,12 +172,8 @@ onUnmounted(() => {
 .context-menu .context-menu {
   top: 0;
   left: 100%;
-  display: none;
 }
 .context-menu li:hover {
   background-color: rgba(0, 0, 0, 0.07);
-}
-.context-menu li:hover .context-menu {
-  display: block;
 }
 </style>
