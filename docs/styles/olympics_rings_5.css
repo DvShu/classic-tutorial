@@ -1,21 +1,24 @@
 .rings-container {
   position: relative;
-  height: 400px;
+  height: 90px;
 }
 
 .rings-item,
 .rings-item::after {
-  width: 200px;
-  height: 200px;
-  border: 10px solid;
+  --olympics-ring-size: 80px;
+  --olympics-ring-border-size: 3px;
+  width: var(--olympics-ring-size);
+  height: var(--olympics-ring-size);
+  border: var(--olympics-ring-border-size) solid;
   border-radius: 50%;
   position: absolute;
   box-sizing: border-box;
 }
 .rings-item::after {
   content: "";
-  left: -10px; /*相对于父级定位，但不包括border，所以利用负边距使他们重合*/
-  top: -10px;
+  /*相对于父级定位，但不包括border，所以利用负边距使他们重合*/
+  left: calc(-1 * var(--olympics-ring-border-size));
+  top: calc(-1 * var(--olympics-ring-border-size));
 }
 .blue {
   border-color: blue;
@@ -30,7 +33,7 @@
 .black {
   border-color: black;
   top: 0;
-  left: 230px;
+  left: calc(var(--olympics-ring-size) + 10px);
 }
 .black::after {
   border-color: black;
@@ -40,7 +43,7 @@
 .red {
   border-color: red;
   top: 0;
-  left: 460px;
+  left: calc((var(--olympics-ring-size) + 10px) * 2);
 }
 .red::after {
   border-color: red;
@@ -49,16 +52,16 @@
 }
 .yellow {
   border-color: yellow;
-  top: 110px;
-  left: 110px;
+  top: 44px;
+  left: 44px;
 }
 .yellow::after {
   border-color: yellow;
 }
 .green {
   border-color: green;
-  top: 110px;
-  left: 340px;
+  top: 44px;
+  left: 134px;
 }
 .green::after {
   border-color: green;
