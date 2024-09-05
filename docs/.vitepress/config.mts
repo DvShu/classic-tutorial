@@ -37,6 +37,7 @@ export default defineConfig({
           { text: "四叶草布局", link: "/tutorial_list/four_leaf_clover" },
           { text: "上下文菜单", link: "/tutorial_list/context_menu" },
           { text: "奥运5环", link: "tutorial_list/olympic_rings_5" },
+          { text: "手机联系人", link: "tutorial_list/phone_contacts" },
         ],
       },
     ],
