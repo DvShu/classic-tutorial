@@ -1,0 +1,71 @@
+.rings-container {
+  position: relative;
+  height: 90px;
+}
+
+.rings-item,
+.rings-item::after {
+  --olympics-ring-size: 80px;
+  --olympics-ring-border-size: 3px;
+  width: var(--olympics-ring-size);
+  height: var(--olympics-ring-size);
+  border: var(--olympics-ring-border-size) solid;
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.rings-item::after {
+  content: "";
+  /*相对于父级定位，但不包括border，所以利用负边距使他们重合*/
+  left: calc(-1 * var(--olympics-ring-border-size));
+  top: calc(-1 * var(--olympics-ring-border-size));
+}
+.blue {
+  border-color: blue;
+  top: 0;
+  left: 0;
+}
+.blue::after {
+  border-color: blue;
+  z-index: 1;
+  border-bottom-color: transparent; /*将下边框设为透明，使看到的为黄色环 以下同理*/
+}
+.black {
+  border-color: black;
+  top: 0;
+  left: calc(var(--olympics-ring-size) + 10px);
+}
+.black::after {
+  border-color: black;
+  z-index: 1;
+  border-left-color: transparent;
+}
+.red {
+  border-color: red;
+  top: 0;
+  left: calc((var(--olympics-ring-size) + 10px) * 2);
+}
+.red::after {
+  border-color: red;
+  z-index: 1;
+  border-left-color: transparent;
+}
+.yellow {
+  border-color: yellow;
+  top: 44px;
+  left: 44px;
+}
+.yellow::after {
+  border-color: yellow;
+}
+.green {
+  border-color: green;
+  top: 44px;
+  left: 134px;
+}
+.green::after {
+  border-color: green;
+  z-index: 1;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
