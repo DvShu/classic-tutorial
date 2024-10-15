@@ -1,0 +1,26 @@
+.audio-control-panel {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.controls-left {
+  display: flex;
+  align-items: center;
+}
+.prev-next-btn,
+.play-btn {
+  font-size: 30px;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+.play-btn {
+  font-size: 36px;
+}
+.play-btn:hover,
+.prev-next-btn:hover {
+  color: #4998f4;
+}
+.left-btn:not(:first-child) {
+  margin-left: 15px;
+}

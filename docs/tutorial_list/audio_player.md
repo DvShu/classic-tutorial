@@ -3,8 +3,10 @@
 实现一个简单的音乐播放器，可以播放、暂停、停止音乐，并且可以调整音量。
 
 <script setup>
+  import '../styles/audio_player.css'
   import Progress from '../components/Progress.vue'
   import { AudioPlayer } from '@asteres/player'
+  import { Icon } from '@iconify/vue';
 
   const player = new AudioPlayer();
 
@@ -64,4 +66,12 @@
   </tbody>
 </table>
 <hr />
-<Progress></Progress>
+<div class="audio-controls-panel">
+  <div class="controls-left">
+    <Icon class="prev-next-btn left-btn" icon="icomoon-free:previous" />
+    <Icon class="left-btn play-btn" icon="icomoon-free:play2" />
+    <Icon class="left-btn play-btn" icon="icomoon-free:pause" />
+    <Icon class="prev-next-btn left-btn" icon="icomoon-free:next" />
+  </div>
+  <Progress></Progress>
+</div>
