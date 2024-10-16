@@ -73,5 +73,6 @@
     <Icon class="left-btn play-btn" icon="icomoon-free:pause" />
     <Icon class="prev-next-btn left-btn" icon="icomoon-free:next" />
   </div>
+  <img class="audio-cover" />
   <Progress></Progress>
 </div>
