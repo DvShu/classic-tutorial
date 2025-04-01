@@ -29,7 +29,6 @@
     "prettier": "^3.3.3",
     "vitepress": "^1.4.0"
   },
-  "packageManager": "pnpm@9.7.1",
   "dependencies": {
     "@asteres/player": "^0.0.1",
     "vue": "^3.5.11"
